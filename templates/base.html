@@ -10,8 +10,55 @@
         <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+    <!-- Кнопка открытия -->
+    <button class="sidebar-toggle" id="sidebarToggle">☰</button>
 
-<!-- div -->
+    <!-- Сайдбар -->
+    <div class="sidebar" id="sidebar">
+        <h3>Меню</h3>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link">О нас</a></li>
+                <li class="nav-item"><a href="{{ url_for('clothes') }}" class="nav-link">Каталог</a></li>
+                <li><a href="/portfolio">Портфолио</a></li>
+                <li><a href="/blog">Блог</a></li>
+                <li><a href="/contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="page">
+        <div class="content">
+            <h1>Основной контент</h1>
+            <p>Нажмите на кнопку ☰ слева, чтобы открыть меню.</p>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Мой сайт</p>
+        </footer>
+    </div>
+
+    <script>
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const sidebar = document.getElementById('sidebar');
+
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+
+        // Закрытие сайдбара при клике вне его
+        document.addEventListener('click', (e) => {
+            if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+
+
+{% block body %}{% endblock %}
+<!--
 <div class="page">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
@@ -24,13 +71,15 @@
         <ul class="nav nav-pills">
             <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link active" aria-current="page">Главная</a></li>
             <li class="nav-item"><a href="{{ url_for('clothes') }}" class="nav-link">Каталог</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">?</a></li>
+            <li class="nav-item"><a href="" class="nav-link">album</a></li>
             <li class="nav-item"><a href="#" class="nav-link">?</a></li>
             <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link">О нас</a></li>
         </ul>
     </header>
     <div class="content">
-
+        <header class="header">HEADER</header>
+        <main class="content">КОНТЕНТ САЙТА</main>
+        <footer class="footer">FOOTER</footer>
         {% block content %}{% endblock %}
     </div>
 
@@ -50,7 +99,7 @@
     </footer>
 </div>
 
-<!-- div -->
+-->
 
 </body>
 </html>
