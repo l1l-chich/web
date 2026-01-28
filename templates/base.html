@@ -14,14 +14,14 @@
 <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
         <img class="header__img" src="{{ url_for('static', filename='img/law.png') }}" alt="law">
-        <h1>
+       <h1>
         <span class="fs-4" style="font-size: 24px; color: #87CEEB; font-family: 'Veles', serif;">ㅤMirar city</span>
         </h1>
     </a>
 
     <ul class="nav nav-pills">
         <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link active" aria-current="page">Главная</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Каталог?</a></li>
+        <li class="nav-item"><a href="{{ url_for('clothes') }}" class="nav-link">Каталог</a></li>
         <li class="nav-item"><a href="#" class="nav-link">?</a></li>
         <li class="nav-item"><a href="#" class="nav-link">?</a></li>
         <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link">О нас</a></li>
