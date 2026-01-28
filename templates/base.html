@@ -1,33 +1,49 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <title>{% block title %}{% endblock %}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-<div class="container">
-<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-        <img class="header__img" src="{{ url_for('static', filename='img/law.png') }}" alt="law">
-       <h1>
-        <span class="fs-4" style="font-size: 24px; color: #87CEEB; font-family: 'Veles', serif;">ㅤMirar city</span>
-        </h1>
-    </a>
+<!-- div -->
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <img class="header__img" src="{{ url_for('static', filename='img/law.png') }}" alt="law">
+           <h1>
+            <span class="fs-4" style="font-size: 24px; color: #87CEEB; font-family: 'Veles', serif;">ㅤMirar city</span>
+            </h1>
+        </a>
 
-    <ul class="nav nav-pills">
-        <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link active" aria-current="page">Главная</a></li>
-        <li class="nav-item"><a href="{{ url_for('clothes') }}" class="nav-link">Каталог</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">?</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">?</a></li>
-        <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link">О нас</a></li>
-    </ul>
-</header>
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link active" aria-current="page">Главная</a></li>
+            <li class="nav-item"><a href="{{ url_for('clothes') }}" class="nav-link">Каталог</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">?</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">?</a></li>
+            <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link">О нас</a></li>
+        </ul>
+    </header>
+
 {% block body %}{% endblock %}
-</div>
+
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center" bis_skin_checked="1">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Bootstrap">
+                <svg class="bi" width="30" height="24" aria-hidden="true"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Company, Inc</span>
+        </div>
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3">
+                    <a class="text-body-secondary" href="#" aria-label="Instagram">
+                    </a></li>
+
+            </ul>
+    </footer>
+<!-- div -->
 </body>
 </html>
